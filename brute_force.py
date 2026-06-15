@@ -19,8 +19,6 @@ with open(dictionary_file, "r", encoding="latin-1") as file:
         
         # Hash the current word
         hashed_word = hashlib.sha256(word.encode()).hexdigest()
-        
-        print("trying: "+ word + " -> " + hashed_word)
 
         # Check if it matches our target
         if hashed_word == target_hash:
