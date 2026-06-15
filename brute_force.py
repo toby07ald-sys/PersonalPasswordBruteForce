@@ -1,9 +1,12 @@
 import hashlib
 # the target hash - this would be pulled from a leaked database in a real attack, but here we will just use the hash of 'apple' for demonstration purposes
-target_hash = "3a7bd3e2360a3d29eea436fcfb7e44c735d117c42d1c1835420b6b9942dd4f1b"
+target_hash = "14210df9e9ecbc65bd3b0a72635af4a1bbaaf06deebce89d2c1cd50854659b85"
 
 #list of words to test the mini dictionary rather then a full dictionary attack from a text file
-dictionary_file = "test_list.txt"
+#dictionary_file = "test_list.txt"
+
+#point at massive dictionary file
+dictionary_file = "rockyou.txt"
 
 print("Loading the wordlist: " + dictionary_file)
 print("Starting the brute-force attack...")
@@ -17,6 +20,8 @@ with open(dictionary_file, "r", encoding="latin-1") as file:
         # Hash the current word
         hashed_word = hashlib.sha256(word.encode()).hexdigest()
         
+        print("trying: "+ word + " -> " + hashed_word)
+
         # Check if it matches our target
         if hashed_word == target_hash:
             print("SUCCESS! Password found: " + word)
