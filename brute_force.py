@@ -1,6 +1,6 @@
 import hashlib
 # the target hash - this would be pulled from a leaked database in a real attack, but here we will just use the hash of 'apple' for demonstration purposes
-target_hash = "14210df9e9ecbc65bd3b0a72635af4a1bbaaf06deebce89d2c1cd50854659b85"
+target_hash = "a9c43be948c5cabd56ef2bacffb77cdaa5eec49dd5eb0cc4129cf3eda5f0e74c"
 
 #list of words to test the mini dictionary rather then a full dictionary attack from a text file
 #dictionary_file = "test_list.txt"
