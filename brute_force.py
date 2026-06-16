@@ -1,7 +1,7 @@
 import hashlib
 # the target hash - this would be pulled from a leaked database in a real attack, but here we will just use the hash of 'apple' for demonstration purposes
 #target_hash = "a011ff460a4781755c4ba10a10ac7eec8d39e76fce7bf0928caff8480fc20575"
-user_input = input("Enter the hash you want to crack")
+user_input = input("Enter the hash you want to crack\n")
 target_hash = user_input.strip()
 
 
@@ -23,7 +23,7 @@ with open(dictionary_file, "r", encoding="latin-1") as file:
         # Hash the current word
         hashed_word = hashlib.sha256(word.encode()).hexdigest()
 
-        #print("Trying password: " + word + " | Hash: " + hashed_word)
+        print("Trying password: " + word + " | Hash: " + hashed_word)
         # Check if it matches our target
         if hashed_word == target_hash:
             print("SUCCESS! Password found: " + word)
